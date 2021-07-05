@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title id="home">BPHC Hospital - Diagnosis</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../static/effects3.css">
+</head>
+
+
+<body>
+<div id="page">
+<h1 id = "logo"> BPHC Hospital </h1>
+
+
+
+<p style="color:#f5deb3;font-family:Brush Script MT">
+....delivering excellence since 1990
+</p>
+</div>
+<br><br>
+
+<form method = "post">
+
+</form>
+
+<div class="detail_container" style="text-align: left;">
+	<div class="patient_list_container">
+
+		<div class="patient_text" style="font-size: 24px; text-align: center;">Diagnosis:</div>
+
+		<div class="button_container">
+
+<form method = "post">
+	<label for="patientid">Enter patient id:</label><br><br>
+ <input type="text" id="patientid" name="pid" required pattern="^[\d]+$"><br><br>
+			<textarea placeholder="Diagnosis" name="diagnosis"></textarea>
+			<textarea placeholder="Notes..." name="dnotes"></textarea>
+			<input type="submit" name="submitdiag"
+		  value="Submit diagnosis" />
+	</form>
+		</div>
+
+		<br>
+		<div class="patient_text"style="font-size: 20px; text-align: center;">Current Tests:</div><br>
+		<div class="test_list_container">
+			<table>
+			<tr>
+				<th>Test ID</th>
+				<th>Test Name</th>
+
+			</tr>
+			{% for d in data %}
+			<tr>
+				<td>{{ d[0]  }}</td>
+				<td>{{ d[1] }}</td>
+
+			</tr>
+			{% endfor %}
+			</table>
+		</div>
+
+		<br>
+		<div class="patient_text"style="font-size: 20px; text-align: center;">Add Tests</div>
+		<div class="button_container">
+			<form method = "post">
+					<label for="patientid">Enter patient id:</label><br><br>
+			 	 <input type="text" id="patientid" name="patientid" required pattern="^[\d]+$"><br><br>
+			<input type="text" placeholder="Add test.." name="addtest">
+			<input  style="width:20%; padding:10px; cursor:pointer; "type="submit" name="submitold"
+			value="Add tests" />
+		</form>
+
+		</div>
+
+
+	</div>
+
+
+
+	<div class="button_container">
+		<br><br>
+		<a href = "bill"><button type="menu" name="submitold">Generate Bill</button></a>
+	</div>
+
+</div>
+
+<div class="button_container">
+
+	<button type="menu" onclick="location.href='doctorPatients'">Back to list</button>
+</div>
+
+<div id = "acknowledge">ⒸBPHC hospital 2021</div>
+</body>
+</html>

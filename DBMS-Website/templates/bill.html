@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title id="home">BPHC Hospital - Diagnosis</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../static/effects3.css">
+</head>
+
+
+<body>
+<div id="page">
+<h1 id = "logo"> BPHC Hospital </h1>
+
+
+
+<p style="color:#f5deb3;font-family:Brush Script MT">
+....delivering excellence since 1990
+</p>
+</div>
+<br><br>
+
+<form method = "post">
+
+</form>
+
+
+
+<form method = "post">
+	<div class="detail_container">
+		<br><br>
+		<div class="detail_text">Patient ID: </div>
+		<input type="text" id="patientid" name="patientbill" required pattern="^[\d]+$">
+		<br><br>
+		<input type="submit" name="submitdiag" value="Generate bill" />
+	</div>
+</form>
+
+
+<p>
+<!--pid,docid,pname,complaint,diagnosis,docnotes,timestamp,testcost,mobno,totalcost-->
+
+<table>
+	<tr>
+		<th>Patient ID</th><th>Doc ID</th><th>Patient Name</th><th>Doc Name</th><th>Complaint</th><th>Diagnosis</th><th>Mobile no.</th>
+	</tr>
+	{% for d in data %}
+	<tr>
+		<td>{{ d[0] }}</td><td>{{ d[0][1] }}</td><td>{{ d[0][2] }}</td><td>{{ d[0][11] }}</td><td>{{ d[0][3] }}</td><td>{{ d[0][4] }}</td><td>{{ d[0][10] }}</td>
+	</tr>
+</table>
+
+<div class="detail_text">Total cost : {{ d[0][12] }}</div>
+
+<table>
+<tr>
+	<th>Test ID</th><th>Test Name</th><th>Cost</th>
+</tr>
+
+<tr>
+	<td>{{ d[7] }}</td><td>{{ d[8] }}</td><td>{{ d[9] }}</td>
+</tr>
+{% endfor %}
+</table>
+
+<div class="button_container" style="color:#f5deb3;font-family:Brush Script MT">
+	<button type="menu" onclick="location.href='doctormain'" style="color:#f5deb3;font-family:Brush Script MT;border-radius:3em;" >Back</button>
+</div>
+
+<div id = "acknowledge">ⒸBPHC hospital 2021</div>
+</body>
+</html>

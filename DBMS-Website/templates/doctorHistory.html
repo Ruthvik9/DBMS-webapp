@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title id="home">BPHC Hospital - Doctor Patient History</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../static/effects3.css">
+</head>
+
+
+<body>
+<div id="page">
+<h1 id = "logo"> BPHC Hospital </h1>
+
+
+
+<<p style="color:#f5deb3;font-family:Brush Script MT">
+	....delivering excellence since 1990
+	</p>
+	</div>
+	<br><br>
+
+	<h1 id="entry_text">Your Patient History</h1>
+
+	
+
+	<div class="detail_container" style="text-align: left;">
+		<!--Add a for loop here and sorting and searching options-->
+
+		<div class="patient_list_container">
+			{% for d in data %}
+			<div class="patient_text" style="font-size: 24px; text-align: center;">Patient name:{{ d[0] }}</div>
+			<div class="patient_text">Patient ID:{{ d[1] }}</div>
+			<div class="patient_text">Complaint:{{ d[2] }}</div>
+			<div class="patient_text">Diagnosis:{{ d[3] }}</div>
+			<!--Another for loop for tests-->
+			<div class="patient_text"style="font-size: 20px; text-align: center;">Tests taken:</div>
+			<div class="test_list_container">
+
+				<table>
+				<tr>
+					<th>Test ID</th>
+					<th>Test Name</th>
+
+				</tr>
+				<tr>
+					<td>{{ d[4] }}</td>
+					<td>{{ d[5] }}</td>
+				</tr>
+				</table>
+			</div>
+			<br>
+			<div class="patient_text" style="font-size: 25px; text-align: center; color: darkred">Cost of treatment:{{ d[6] }}</div><br><br>
+			{% endfor %}
+		</div>
+		<br><br><br><br><br>
+
+
+
+
+	</div>
+
+	<div class="button_container">
+		<button type="menu" onclick="location.href='doctormain'">Back</button>
+	</div>
+
+<div id = "acknowledge">ⒸBPHC hospital 2021</div>
+</body>
+</html>

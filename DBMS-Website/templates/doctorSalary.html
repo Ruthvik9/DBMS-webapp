@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title id="home">BPHC Hospital - Doctor Details</title>
+	<link rel="stylesheet" href="../static/effects3.css">
+  <link rel="stylesheet" href="../static/temp.css">
+</head>
+
+
+<body>
+<div id="page">
+<h1 id = "logo"> BPHC Hospital </h1>
+
+
+
+<p style="color:#f5deb3;font-family:Brush Script MT">
+....delivering excellence since 1990
+</p>
+</div>
+<br><br>
+
+<u><h1 id="entry_text" style="color:#f5deb3;font-family:Brush Script MT;font-size:45px;margin-top: 3em;">Doctor Salaries</h1></u>
+
+<div class="detail_container" style = "border-radius:2em; margin:2em 2em 2em 2em">
+	{% for d in data %}
+  <table>
+  <tr>
+    <th>Name</th><th>ID</th><th>Salary</th><th>No. of Hours</th>
+    </tr>
+   <tr><td>{{ d[0] }}</td><td>{{ d[1] }}</td><td>{{ d[2] }}</td><td>{{ d[3] }}</td></tr></table>
+	 <br><br>
+{% endfor %}
+</div>
+
+<div class="button_container" style="color:#f5deb3;font-family:Brush Script MT">
+	<button type="menu" onclick="location.href='adminmain'" style="color:#f5deb3;font-family:Brush Script MT;border-radius:3em;" >Back</button>
+</div>
+
+<div id = "acknowledge">ⒸBPHC hospital 2021</div>
+</body>
+</html>
